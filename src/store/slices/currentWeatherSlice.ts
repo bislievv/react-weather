@@ -5,11 +5,20 @@ import { CurrentWeather, Weather } from "../types/types";
 
 const initialState: CurrentWeather = {
   weather: {
+    coord: {
+      lat: 0,
+      lon: 0,
+    },
     main: {
       temp: 0,
       pressure: 0,
       humidity: 0,
     },
+    weather: [
+      {
+        icon: "",
+      },
+    ],
     name: "",
     dt: 0,
     timezone: 0,

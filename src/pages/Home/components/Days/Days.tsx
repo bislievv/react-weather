@@ -1,7 +1,9 @@
-import { days } from '../../../../data';
 import { Card } from './Card';
 import { Tabs } from './Tabs';
 import s from './Days.module.scss';
+import { dateBuilder } from '../../../../helpers/daysWeek';
+import { selectWeekWeatherData } from '../../../../store/selectors';
+import { useCustomSelector } from '../../../../hooks/store';
 
 export interface Day {
   day: string;
@@ -13,12 +15,15 @@ export interface Day {
 }
 
 export const Days = () => {
+  const weekDays = dateBuilder(new Date());
+  const { daily } = useCustomSelector(selectWeekWeatherData)
+  console.log(daily)
   return (
     <>
       <Tabs />
       <div className={s.days}>
-        {days.map((day: Day) => (
-          <Card day={day} key={day.day} />
+        {daily?.map((item, index) => (
+          <Card daily={item} key={item.dt} weekDays={weekDays[index]} />
         ))}
       </div>
     </>

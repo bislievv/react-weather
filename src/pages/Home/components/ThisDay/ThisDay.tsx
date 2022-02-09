@@ -15,7 +15,7 @@ export const ThisDay = ({ weather }: Props) => {
                     <div className={s.this__temp}>{Math.floor(weather.main.temp)}°</div>
                     <div className={s.this__day_name}>Сегодня</div>
                 </div>
-                <GlobalSvgSelector id="sun" />
+                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weather-icon" width="119px" />
             </div>
             <div className={s.bottom__block}>
                 <div className={s.this__time}>
