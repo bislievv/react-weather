@@ -14,11 +14,7 @@ const initialState: weekWeather = {
 export const weekWeatherSlice = createSlice({
   name: "week_weather",
   initialState,
-  reducers: {
-    removeLastItem: state => {
-      state.weekWeather.daily.pop();
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchWeatherWeek.pending, (state: weekWeather) => {
       state.isLoading = true;
@@ -42,7 +38,5 @@ export const weekWeatherSlice = createSlice({
     );
   },
 });
-
-export const { removeLastItem } = weekWeatherSlice.actions;
 
 export default weekWeatherSlice.reducer;

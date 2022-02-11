@@ -1,14 +1,13 @@
-import React from 'react';
 import { IndicatorSvgSelector } from "../../../../assets/icons/IndicatorSvgSelector"
 import s from './ThisDayInfo.module.scss';
 
-export interface Props {
+export interface thisDayItemProps {
   icon: string;
   name: string;
   info: string;
 }
 
-export const ThisDayItem = (props: Props) => {
+export const ThisDayItem = (props: thisDayItemProps) => {
   const { icon, name, info } = props;
   return (
     <div className={s.item}>

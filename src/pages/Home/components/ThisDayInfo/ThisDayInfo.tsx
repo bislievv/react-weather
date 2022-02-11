@@ -1,14 +1,12 @@
 import s from './ThisDayInfo.module.scss';
-import cloud from '../../../../assets/images/cloud.png';
 import { ThisDayItem } from './ThisDayItem';
 import { Weather } from '../../../../store/types/types';
-import { IndicatorSvgSelector } from '../../../../assets/icons/IndicatorSvgSelector';
 
-interface Props {
+interface thisDayInfoProps {
     weather: Weather
 }
 
-export const ThisDayInfo = ({ weather }: Props) => {
+export const ThisDayInfo = ({ weather }: thisDayInfoProps) => {
     return (
         <div className={s.this__day_info}>
             <div className={s.this__day_info_items}>
@@ -17,7 +15,6 @@ export const ThisDayInfo = ({ weather }: Props) => {
                 <ThisDayItem icon="precipitation" info={`${weather.main.humidity}%`} name="Влажность" />
                 <ThisDayItem icon="wind" info={`${weather.wind.speed} м/с`} name="Ветер" />
             </div>
-            <img className={s.cloud__img} src={cloud} alt="облако" />
         </div>
     );
 };

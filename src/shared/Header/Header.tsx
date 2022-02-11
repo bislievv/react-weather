@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import Select from 'react-select';
 import { GlobalSvgSelector } from '../../assets/icons/GlobalSvgSelector';
 import { options } from '../../data';
@@ -8,7 +8,7 @@ import s from "./Header.module.scss"
 
 export const Header = () => {
   const dispatch = useCustomDispatch();
-  const [city, setCity] = useState("Грозный")
+  const [city, setCity] = useState<string>("Грозный")
 
   useEffect(() => {
     dispatch(fetchWeather(city))
@@ -27,6 +27,7 @@ export const Header = () => {
       backgroundColor: "rgba(71, 147, 255, 0.2)",
       borderRadius: "10px",
       zIndex: 100,
+      boxShadow: "2px 5px 25px 2px rgba(180, 180, 180, 0.9)",
     })
   }
 

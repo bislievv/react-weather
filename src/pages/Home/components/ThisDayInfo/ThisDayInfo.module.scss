@@ -2,11 +2,9 @@
 
 .this__day_info {
   position: relative;
-  padding: 40px;
-  max-width: 750px;
+  padding: 40px 0 40px 40px;
+  max-width: 500px;
   width: 100%;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
 }
 
 .item {
@@ -40,10 +38,4 @@
   .indicator__name {
     color: $base-color;
   }
-}
-
-.cloud__img {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
